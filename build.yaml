@@ -1,0 +1,18 @@
+targets:
+  $default:
+    builders:
+      # Change 'prototype' with the name of your project!
+      prototype:prototype:
+        enabled: true
+
+builders:
+  # Change 'prototype' with the name of your project!
+  prototype:
+    # Update path below to match the location of your builders.dart file
+    import: "lib/builders.dart"
+    builder_factories:
+      [ "declarationsBuilder", ]
+    build_extensions:
+      { ".gen.dart": [".types.dart.", ".declarations.dart.", ".dart"] }
+    auto_apply: dependents
+    build_to: source
